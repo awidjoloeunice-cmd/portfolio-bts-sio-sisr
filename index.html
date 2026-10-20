@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eunice – Portfolio BTS SIO SISR</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf5f8;--card:#fff;--ink:#2b1b3a;--mute:#6f5f7e;--line:#e8d9e4;--acc:#a8326f;--acc2:#f7e3ee;--lil:#6d3fc4;--warn:#9a5600;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#130c1f;--card:#1d1330;--ink:#f5ecfa;--mute:#b9a8cc;--line:#33244d;--acc:#f0a6c8;--acc2:#2e1d45;--lil:#c9a7ff;--warn:#f0b35a}}
+:root[data-theme="dark"]{--bg:#130c1f;--card:#1d1330;--ink:#f5ecfa;--mute:#b9a8cc;--line:#33244d;--acc:#f0a6c8;--acc2:#2e1d45;--lil:#c9a7ff;--warn:#f0b35a}
+html{scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "DM Sans",system-ui,sans-serif}
+a{color:var(--acc)}
+button,.btn{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{max-width:1060px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:18px}
+.logo{font:600 1.7rem "Cormorant Garamond",Georgia,serif;margin-right:auto}
+.logo span{color:var(--acc)}
+nav{display:flex;gap:4px;overflow-x:auto}
+nav button{background:none;border:0;border-bottom:2px solid transparent;color:var(--mute);padding:8px 10px;white-space:nowrap}
+nav button:hover{color:var(--ink)}
+nav button[aria-current="page"]{color:var(--ink);border-color:var(--acc)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);border:1px solid var(--acc);border-radius:8px;padding:9px 16px;text-decoration:none;transition:background .15s,transform .15s}
+.btn:hover{background:var(--acc2);transform:translateY(-1px)}
+.btn.fill{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.btn.fill:hover{background:var(--acc);filter:brightness(1.1)}
+main{max-width:1060px;margin:0 auto;padding:40px 16px 64px}
+section[hidden]{display:none}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.6rem,8vw,4.8rem)}
+h1 em,h2 em{color:var(--acc)}
+h2{font-size:clamp(2rem,5vw,2.8rem);margin-bottom:8px}
+h3{font-size:1.35rem;margin-bottom:6px}
+.lead{color:var(--mute);max-width:62ch;margin:10px 0 22px}
+.label{color:var(--acc);font-size:.85rem;margin-bottom:8px}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
+.stats b{display:block;font:600 2.2rem "Cormorant Garamond",serif}
+.stats span{color:var(--mute);font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:6px;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card p{margin:0;color:var(--mute)}
+.ico{width:34px;height:34px;border-radius:8px;background:var(--acc2);color:var(--acc);display:grid;place-items:center;font-size:1.1rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:10px}
+.tags span{border:1px solid var(--line);border-radius:999px;padding:1px 10px;font-size:.8rem;color:var(--mute)}
+.badge{align-self:flex-start;font-size:.78rem;border-radius:999px;padding:2px 10px;background:var(--acc2);color:var(--acc)}
+.badge.stage{background:transparent;border:1px solid var(--lil);color:var(--lil)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.filters button{background:none;border:1px solid var(--line);color:var(--mute);border-radius:999px;padding:6px 16px}
+.filters button:hover{border-color:var(--acc);color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+.todo{border:1px dashed var(--warn);color:var(--warn);border-radius:4px;padding:1px 6px;font-size:.85rem}
+.card.ph{border-style:dashed}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:22px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.info div{padding:14px 18px;background:var(--card)}
+.info small{display:block;color:var(--mute);font-size:.78rem}
+ul.m{padding-left:18px;margin:6px 0}
+footer{max-width:1060px;margin:0 auto;padding:20px 16px 40px;color:var(--mute);font-size:.88rem;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){.btn,.card{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<div class="logo">Eunice<span>.</span></div>
+<nav id="nav" aria-label="Navigation">
+<button data-p="accueil">Accueil</button><button data-p="competences">Compétences</button><button data-p="certifications">Certifications</button><button data-p="projets">Projets</button><button data-p="experiences">Expériences</button><button data-p="veille">Veille</button>
+</nav>
+<button class="btn" data-p="contact">Me contacter</button>
+</div></header>
+ 
+<main>
+<section id="accueil">
+<p class="label">BTS SIO · option SISR</p>
+<h1>Systèmes, réseaux<br>&amp; <em>cybersécurité</em></h1>
+<p class="lead">Je suis Eunice Awidjolo, étudiante en BTS Services Informatiques aux Organisations. J'administre des systèmes et des réseaux, je m'intéresse à la cybersécurité et je vise le cloud.</p>
+<div class="row"><button class="btn fill" data-p="competences">Voir mes compétences →</button><button class="btn" data-p="projets">Mes projets</button></div>
+<div class="stats"><div><b>3</b><span>projets présentés</span></div><div><b>6</b><span>certificats CNIL (RGPD)</span></div><div><b>1</b><span>stage chez ODDiSCOM</span></div><div><b>SISR</b><span>spécialisation</span></div></div>
+<h2 style="margin-top:56px">À <em>propos</em></h2>
+<p class="lead">Je développe mes compétences en administration des systèmes et réseaux, en support informatique et en cybersécurité. Curieuse, sérieuse et motivée, je veux poursuivre dans les systèmes et réseaux, puis me spécialiser progressivement dans le cloud et la cybersécurité.</p>
+<div class="info"><div><small>Formation</small>BTS SIO option SISR</div><div><small>Spécialisation</small>Administration systèmes &amp; réseaux</div><div><small>Objectif</small>Cloud et cybersécurité</div></div>
+</section>
+ 
+<section id="competences" hidden>
+<p class="label">Ce que je maîtrise</p><h2>Mes <em>compétences</em></h2>
+<div class="grid">
+<div class="card"><div class="ico">▦</div><h3>Windows Server &amp; Active Directory</h3><p>Administration de Windows Server, utilisateurs, groupes et stratégies de groupe.</p><div class="tags"><span>Active Directory</span><span>GPO</span><span>Windows Server</span></div></div>
+<div class="card"><div class="ico">$</div><h3>Linux</h3><p>Utilisation de Debian et Ubuntu, droits, scripts Bash.</p><div class="tags"><span>Debian</span><span>Ubuntu</span><span>Bash</span></div></div>
+<div class="card"><div class="ico">◫</div><h3>Virtualisation</h3><p>Création et gestion de machines virtuelles.</p><div class="tags"><span>VMware</span><span>VirtualBox</span><span>Proxmox</span></div></div>
+<div class="card"><div class="ico">⌁</div><h3>Réseaux &amp; routage</h3><p>Configuration réseau et simulation d'infrastructures.</p><div class="tags"><span>DHCP</span><span>DNS</span><span>VLAN</span><span>RIP</span><span>MikroTik</span><span>GNS3</span><span>pfSense</span></div><button class="btn" data-p="projets" style="margin-top:10px">Voir la preuve</button></div>
+<div class="card"><div class="ico">🛡</div><h3>Cybersécurité</h3><p>Sécurisation des systèmes, pare-feu, OSINT, sensibilisation au phishing et RGPD.</p><div class="tags"><span>Pare-feu</span><span>OSINT</span><span>Phishing</span><span>RGPD</span></div><button class="btn" data-p="certifications" style="margin-top:10px">Voir les certifications</button></div>
+<div class="card"><div class="ico">☎</div><h3>Support informatique</h3><p>Installation, configuration, maintenance, support utilisateur niveau 1 et résolution d'incidents.</p><div class="tags"><span>Support N1</span><span>Incidents</span></div><button class="btn" data-p="experiences" style="margin-top:10px">Voir le stage</button></div>
+<div class="card"><div class="ico">&lt;/&gt;</div><h3>Développement</h3><p>Bases en création et structuration de pages web et en Java.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Java</span></div></div>
+<div class="card"><div class="ico">▤</div><h3>Bureautique</h3><p>Documents, tableaux et présentations.</p><div class="tags"><span>Word</span><span>Excel</span><span>PowerPoint</span></div></div>
+</div>
+</section>
+ 
+<section id="certifications" hidden>
+<p class="label">Formations validées</p><h2>Mes <em>certifications</em></h2>
+<p class="lead">MOOC de la CNIL sur le Règlement général sur la protection des données (RGPD).</p>
+<div class="grid">
+<div class="card"><span class="badge">CNIL · RGPD</span><h3>Le RGPD et ses notions clés</h3><p>10/11/2025</p><a class="btn" href="https://drive.google.com/file/d/1D3UxK-i_DN0OmArXQMw9ZUajygM41MSa/view?usp=drive_link">Voir le certificat</a></div>
+<div class="card"><span class="badge">CNIL · RGPD</span><h3>Les principes de la protection des données</h3><p>10/11/2025</p><a class="btn" href="https://drive.google.com/file/d/1CFqF3Dzfl7-L5ip_cdLRuBih_CE8y8lP/view?usp=drive_link">Voir le certificat</a></div>
+<div class="card"><span class="badge">CNIL · RGPD</span><h3>Les responsabilités des acteurs</h3><p>10/11/2025</p><a class="btn" href="https://drive.google.com/file/d/1NlLKfkVp9uhN9gHQ4a9-3ERj0G2sZyJJ/view?usp=drive_link">Voir le certificat</a></div>
+<div class="card"><span class="badge">CNIL · RGPD</span><h3>Le DPO et les outils de la conformité</h3><p>10/11/2025</p><a class="btn" href="https://drive.google.com/file/d/1LdOtQr8BuDvBVpGLHPcVWnxbkoY3cDe8/view?usp=drive_link">Voir le certificat</a></div>
+<div class="card"><span class="badge">CNIL · RGPD</span><h3>Les collectivités territoriales</h3><p>10/11/2025</p><a class="btn" href="https://drive.google.com/file/d/1BoLqk4tS4d5Mt40Rrr-nDSqM1LyqAjUV/view?usp=drive_link">Voir le certificat</a></div>
+<div class="card"><span class="badge">Coursera</span><h3>Cybersecurity Foundations</h3><p>07/10/2026</p><a class="btn" href="https://coursera.org/share/c809acb388077d3601a60f0a2b16932d">Voir le certificat</a></div>
+</div>
+</section>
+ 
+<section id="projets" hidden>
+<p class="label">Réalisations</p><h2>Mes <em>projets</em></h2>
+<div class="filters" role="group" aria-label="Filtrer les projets" data-target="projets">
+<button data-f="all" aria-pressed="true">Tout</button><button data-f="classe" aria-pressed="false">En classe</button><button data-f="stage" aria-pressed="false">En stage</button></div>
+<div class="grid">
+<article class="card" data-c="classe"><span class="badge">En classe</span><h3>Réseau interconnecté sous GNS3</h3><p>Janvier 2026</p><p>Résultat : connectivité effective entre tous les appareils du réseau avec accès Internet via NAT.</p><p>Difficultés : configuration des routes et identification des bonnes adresses IP pour assurer la communication entre les sous-réseaux.</p><div class="tags"><span>GNS3</span><span>Routage</span></div><a class="btn" href="https://sites.google.com/view/prjnini/accueil" style="margin-top:10px">Preuves</a></article>
+<article class="card" data-c="classe"><span class="badge">En classe</span><h3>Simulation d'attaque de phishing</h3><p>Juin 2026</p><p>Résultat : réception du mail par la victime et récupération de ses informations personnelles et sensibles.</p><p>Difficultés : concevoir un message crédible et correctement configurer le code HTML pour garantir la capture des données.</p><div class="tags"><span>GoPhish</span><span>Cybersécurité</span></div><a class="btn" href="https://drive.google.com/file/d/1vVCQf973LU09NOArJ4Dex13I89Z1PNOs/view?usp=sharing" style="margin-top:10px">Preuves</a></article>
+<article class="card" data-c="classe"><span class="badge">En classe</span><h3>Projet réseau avec pfSense</h3><p>Mai 2026</p><p>Résultat : favoriser la haute disponibilité du réseau grâce à une configuration sécurisée et stable.</p><p>Difficultés : configuration du failover pour assurer la continuité de service en cas de panne.</p><div class="tags"><span>pfSense</span><span>Pare-feu</span></div><a class="btn" href="https://github.com/awidjoloeunice-cmd/Projet-reseaux-Pfsense.git" style="margin-top:10px">Preuves (GitHub)</a></article>
+<article class="card" data-c="stage"><span class="badge stage">En stage</span><h3>Support et déploiement de postes</h3><p>Résolution d'incidents, préparation et déploiement de nouveaux postes, protection des postes de travail.</p><div class="tags"><span>Support N1</span><span>Déploiement</span></div><a class="btn" href="https://drive.google.com/file/d/1o7_-EQEGeydREotpkryg5pPrHc8wNJUf/view?usp=sharing" style="margin-top:10px">Preuves</a></article>
+</div>
+</section>
+ 
+<section id="experiences" hidden>
+<p class="label">Parcours professionnel</p><h2>Mes <em>expériences</em></h2>
+<div class="card" style="margin-top:20px"><span class="badge stage">Stage</span><h3>Technicienne informatique stagiaire — ODDiSCOM</h3><p>Montmagny, France · Juillet 2026 à août 2026</p>
+<ul class="m"><li>Accompagnement des utilisateurs dans la résolution de leurs problèmes</li><li>Préparation et déploiement de nouveaux postes informatiques</li><li>Diagnostic et résolution d'incidents techniques</li><li>Application des bonnes pratiques de cybersécurité et protection des postes de travail</li></ul>
+<div class="tags"><span>Support N1</span><span>Déploiement</span><span>Cybersécurité</span></div>
+<a class="btn" href="https://drive.google.com/file/d/1o7_-EQEGeydREotpkryg5pPrHc8wNJUf/view?usp=sharing" style="margin-top:12px;align-self:flex-start">Consulter le document de stage</a></div>
+</section>
+ 
+<section id="veille" hidden>
+<p class="label">Se tenir informée</p><h2>Ma <em>veille</em> technologique</h2>
+<p class="lead">Articles que j'ai lus, classés par thème. <span class="todo">À compléter : ajoutez vos vrais articles (titre, date, source, résumé)</span></p>
+<div class="filters" role="group" aria-label="Filtrer la veille" data-target="veille">
+<button data-f="all" aria-pressed="true">Tout</button><button data-f="cyber" aria-pressed="false">Cybersécurité</button><button data-f="reseaux" aria-pressed="false">Réseaux</button><button data-f="systemes" aria-pressed="false">Systèmes</button><button data-f="cloud" aria-pressed="false">Cloud &amp; DevOps</button></div>
+<div class="grid">
+<article class="card ph" data-c="cyber"><span class="badge">Cybersécurité</span><h3>Titre de l'article</h3><p>Résumé en deux lignes. <span class="todo">Source, date, lien</span></p></article>
+<article class="card ph" data-c="reseaux"><span class="badge">Réseaux</span><h3>Titre de l'article</h3><p>Résumé en deux lignes. <span class="todo">Source, date, lien</span></p></article>
+<article class="card ph" data-c="systemes"><span class="badge">Systèmes</span><h3>Titre de l'article</h3><p>Résumé en deux lignes. <span class="todo">Source, date, lien</span></p></article>
+<article class="card ph" data-c="cloud"><span class="badge">Cloud &amp; DevOps</span><h3>Titre de l'article</h3><p>Résumé en deux lignes. <span class="todo">Source, date, lien</span></p></article>
+</div>
+</section>
+ 
+<section id="contact" hidden>
+<p class="label">Échangeons</p><h2>Me <em>contacter</em></h2>
+<p class="lead">Une question, une opportunité de stage ou d'alternance ? Écrivez-moi.</p>
+<div class="row"><button class="btn fill" id="copy">Copier mon e-mail</button><a class="btn" href="https://www.linkedin.com/in/eunice-awidjolo-8a3548391" id="li" target="_blank" rel="noreferrer">LinkedIn</a><a class="btn" href="https://flowcv.com/resume/ro6rgf88s1t5" id="cv" target="_blank" rel="noreferrer">Télécharger mon CV</a></div>
+<p id="msg" aria-live="polite" class="lead"></p>
+</section>
+</main>
+<footer>© 2026 Eunice Awidjolo · Portfolio BTS SIO SISR</footer>
+ 
+<script>
+var EMAIL="awidjoloeunice@gmail.com";
+var pages=["accueil","competences","certifications","projets","experiences","veille","contact"];
+function go(p){
+ if(pages.indexOf(p)<0)p="accueil";
+ pages.forEach(function(id){document.getElementById(id).hidden=(id!==p)});
+ document.querySelectorAll("nav button").forEach(function(b){
+  if(b.dataset.p===p)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
+ try{history.replaceState(null,"","#"+p)}catch(e){}
+ window.scrollTo(0,0);
+}
+document.addEventListener("click",function(e){
+ var b=e.target.closest("[data-p]");if(b){go(b.dataset.p);return}
+ var f=e.target.closest(".filters button");if(!f)return;
+ var box=f.parentNode;
+ box.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===f?"true":"false")});
+ document.querySelectorAll("#"+box.dataset.target+" article").forEach(function(a){
+  a.hidden=!(f.dataset.f==="all"||a.dataset.c===f.dataset.f)});
+});
+document.getElementById("copy").onclick=function(){
+ var m=document.getElementById("msg");
+ if(!EMAIL){m.textContent="Ajoutez d'abord votre adresse e-mail dans la page.";return}
+ try{navigator.clipboard.writeText(EMAIL).then(function(){m.textContent="E-mail copié : "+EMAIL})}
+ catch(err){m.textContent="Mon e-mail : "+EMAIL}
+};
+["li","cv"].forEach(function(id){var el=document.getElementById(id); if(el) el.onclick=function(e){/* links open in new tab */}});
+go((location.hash||"").slice(1));
+</script>
+</body>
+</html>
